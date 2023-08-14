@@ -11,7 +11,6 @@
         "about/product-comparison"
       ]
     },
-    "about-calico-enterprise",
     {
       "type": "category",
       "label": "Install and upgrade",
@@ -278,7 +277,7 @@
           },
           "items": [
             "network-policy/recommendations/policy-recommendations",
-            "network-policy/recommendations/denied-traffic-flows"
+            "network-policy/recommendations/learn-about-policy-recommendations"
           ]
         },
         "network-policy/policy-best-practices",
@@ -362,17 +361,6 @@
             "id": "network-policy/policy-firewalls/index"
           },
           "items": [
-            {
-              "type": "category",
-              "label": "Panorama firewall integrations",
-              "link": {
-                "type": "doc",
-                "id": "network-policy/policy-firewalls/panorama-integration/index"
-              },
-              "items": [
-                "network-policy/policy-firewalls/panorama-integration/tigera-panorama-policy-integration"
-              ]
-            },
             {
               "type": "category",
               "label": "Fortinet firewall integrations",

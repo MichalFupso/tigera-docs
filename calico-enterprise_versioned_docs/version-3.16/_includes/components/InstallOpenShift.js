@@ -56,7 +56,7 @@ export default function InstallOpenShift(props) {
         <Link href={`${baseUrl}/getting-started/install-on-clusters/openshift/requirements`}>system requirements</Link>:
       </p>
       <CodeBlock language='bash'>
-        sed -i 's/OpenShiftSDN/Calico/' install-config.yaml{'\n'}
+        sed -i 's/\(OpenShiftSDN\|OVNKubernetes\)/Calico/' install-config.yaml{'\n'}
         sed -i 's/platform: {}/platform:\n{'\t'}aws:\n{'\t'}type: m4.xlarge/g' install-config.yaml
       </CodeBlock>
 
@@ -238,8 +238,11 @@ spec:
       <p>You can now monitor progress with the following command:</p>
       <CodeBlock>watch oc get tigerastatus</CodeBlock>
       <p>
-        When it shows all components with status <code>Available</code>, proceed to the next section.
+        When it shows all components with status <code>Available</code>, proceed to the next step.
       </p>
+
+      <p>(Optional) Apply the full CRDs including descriptions.</p>
+      <CodeBlock language='bash'>oc apply --server-side --force-conflicts -f {filesUrl}/manifests/operator-crds.yaml</CodeBlock>
 
       <When condition={props.clusterType === 'management'}>
         <>
